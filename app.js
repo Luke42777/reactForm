@@ -5,7 +5,6 @@ class Form extends React.Component {
         isLiked: true,
         number: "1",
     }
-
     handleChange = e => {
         if(e.target.type === "checkbox"){
             this.setState({
