@@ -7,30 +7,16 @@ class Form extends React.Component {
     }
 
     handleChange = e => {
-
-        switch(e.target.name){
-            case "number":
-                this.setState({
-                    number: e.target.value,
-                })
-                break;
-                case "description":
-                    this.setState({
-                        description: e.target.value,
-                    })
-                    break;
-                case "city":
-                        this.setState({
-                            city: e.target.value,
-                        })
-                        break;
-                case "isLiked":
-                            this.setState({
-                                isLiked: e.target.checked,
-                            })
+        if(e.target.type === "checkbox"){
+            this.setState({
+                [e.target.name]: e.target.checked,
+            })
         }
-    
-
+       else{
+        this.setState({
+            [e.target.name]: e.target.value,
+        })
+       }
     }
 
     render() {
